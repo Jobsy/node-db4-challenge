@@ -27,7 +27,7 @@ exports.up = function (knex) {
                 .inTable("ingredient")
                 .onUpdate("CASCADE")
                 .onDelete("CASCADE")
-            table.primary(["recipe_id", "ingredient_id"])
+            // table.primary(["recipe_id", "ingredient_id"])
         })
 };
 
