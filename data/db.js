@@ -4,11 +4,11 @@ const db = knex(knexConfig.development);
 
 
 module.exports = {
-    find
+    getRecipes,
 };
 
-function find() {
-    return db("resources");
+function getRecipes() {
+    return db("recipe");
 }
 
 // function findResources() {
