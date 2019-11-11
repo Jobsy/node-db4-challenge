@@ -9,6 +9,9 @@ const router = express.Router();
 //     res.status(200).json("It's workinggggggggggggggggg!!!")
 // })getShoppingList
 
+
+
+/////stretch
 router.get("/", (req, res) => {
     dB.getRecipes()
         .then((recipes) => {
