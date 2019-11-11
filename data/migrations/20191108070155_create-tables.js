@@ -47,6 +47,7 @@ exports.up = function (knex) {
 exports.down = function (knex) {
     return knex.schema
         .dropTableIfExits("quantity")
+        .dropTableIfExits("description")
         .dropTableIfExits("ingredient")
         .dropTableIfExits("recipe")
 };
