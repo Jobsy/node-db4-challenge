@@ -33,6 +33,7 @@ function getInstructions(id) {
         .join("description", "recipe.id", "=", "description.recipe_id")
         .where("description.recipe_id", "=", id)
 }
+
 function getAllRecipesByIngredient(id) {
     return db.select("*")
         .from("ingredient")
