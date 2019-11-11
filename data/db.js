@@ -5,7 +5,8 @@ const db = knex(knexConfig.development);
 
 module.exports = {
     getRecipes,
-    getShoppingList
+    getShoppingList,
+    getInstructions
 };
 
 function getRecipes() {
@@ -16,5 +17,12 @@ function getShoppingList(id) {
     return db.select("*")
         .from("ingredient")
         .join("quantity")
+        .where("quantity.recipe_id", "=", id)
+}
+
+function getInstructions(id) {
+    return db.select("*")
+        .from("recipe")
+        .join("description", "recipe.id", "=", "description.recipe_id")
         .where("quantity.recipe_id", "=", id)
 }

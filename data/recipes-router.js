@@ -29,7 +29,24 @@ router.get("/:id", (req, res) => {
             if (shoppingList.length === 0) {
                 res.status(404).json({ message: "The shoppingList with the specified ID does not exist." })
             }
-            res.status(200).json({ shoppingListInfo: shoppingList, url: url, operation: "GET"  })
+            res.status(200).json({ shoppingListInfo: shoppingList, url: url, operation: "GET" })
+        })
+        .catch((err) => {
+            res.status(500).json({ error: "The shoppingList information could not be retrieved." + err })
+        })
+})
+
+router.get("/:id", (req, res) => {
+    const { id } = req.params;
+    const { url } = req;
+
+    dB.getInstructions(id)
+        .then((shoppingList) => {
+
+            if (shoppingList.length === 0) {
+                res.status(404).json({ message: "The shoppingList with the specified ID does not exist." })
+            }
+            res.status(200).json({ shoppingListInfo: shoppingList, url: url, operation: "GET" })
         })
         .catch((err) => {
             res.status(500).json({ error: "The shoppingList information could not be retrieved." + err })
