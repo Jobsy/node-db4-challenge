@@ -1,7 +1,7 @@
 
 const express = require("express");
 
-// const dB = require("./db");
+const dB = require("./db");
 
 const router = express.Router();
 
@@ -11,4 +11,4 @@ router.get("/", (req, res) => {
 
 
 
-module.exports = express;
+module.exports = router;
