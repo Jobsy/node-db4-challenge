@@ -1,7 +1,7 @@
 exports.seed = function(knex) {
-  return knex("descriptions").insert([
-        {project_description: "making cake"},
-        {project_description: "making cake22222"},
-        {project_description: "making cake33333"},
+  return knex("description").insert([
+        {recipe_description: "making cake", recipe_id: 3},
+        {recipe_description: "making cake22222", recipe_id: 2},
+        {recipe_description: "making cake33333", recipe_id: 1},
       ]);
 };
